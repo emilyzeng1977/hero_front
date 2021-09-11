@@ -1,12 +1,14 @@
-<h2>Add a new user</h2>
 <form>
-<!--  <label for="new-hero">User name: </label>-->
-  <label>User name: </label>
-  <input id="new-hero" #heroName />
-  <label>Adress: </label>
-  <input id="new-hero-address" #heroAddress />
+<!--  <label for="new-hero">Student name: </label>-->
+  <label>Student name: </label><input id="new-hero-name" #userName /><br>
+  <label>English: </label><input id="new-hero-en" value="0" #en /><br>
+  <label>Thinking skills: </label><input id="new-hero-ts" value="0" #ts /><br>
+  <label>Maths: </label><input id="new-hero-math" value="0" #math /><br>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button class="add-button" (click)="add(heroName.value); heroName.value=''">Add user</button>
+  <button class="add-button" (click)="add(userName.value,
+          en.value,
+          ts.value,
+          math.value);">Add user</button>
 </form>
 
 <ul class="heroes">

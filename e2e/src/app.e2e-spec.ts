@@ -1,6 +1,6 @@
 import { browser, element, by, ElementFinder, ElementArrayFinder } from 'protractor';
 
-const expectedH1 = 'List of users';
+const expectedH1 = 'List of students';
 const expectedTitle = `${expectedH1}`;
 const targetHero = { id: 15, name: 'Magneta' };
 const targetHeroDashboardIndex = 3;
