@@ -16,6 +16,7 @@ export class HeroService {
   private getHeroUrl = 'http://localhost:5000/student'
   private addHeroUrl = 'http://localhost:5000/add'
   private updateHeroUrl = 'http://localhost:5000/update'
+  private delHeroUrl = 'http://localhost:5000/delete'
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -83,7 +84,7 @@ export class HeroService {
 
   /** DELETE: delete the hero from the server */
   deleteHero(id: number): Observable<Hero> {
-    const url = `${this.heroesUrl}/${id}`;
+    const url = `${this.delHeroUrl}/${id}`;
 
     return this.http.delete<Hero>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted hero id=${id}`)),
