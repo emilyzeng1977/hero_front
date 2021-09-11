@@ -1,0 +1,6 @@
+# idea
+.idea/
+# static web
+dist/
+# node modules
+node_modules/
