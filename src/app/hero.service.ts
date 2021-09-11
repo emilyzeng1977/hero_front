@@ -13,7 +13,7 @@ export class HeroService {
 
   // private heroesUrl = 'api/heroes';  // URL to web api
   private heroesUrl = 'http://localhost:5000/list'
-  private getHeroUrl = 'http://localhost:5000/list'
+  private getHeroUrl = 'http://localhost:5000/student'
   private addHeroUrl = 'http://localhost:5000/add'
 
   httpOptions = {
@@ -49,7 +49,7 @@ export class HeroService {
 
   /** GET hero by id. Will 404 if id not found */
   getHero(id: number): Observable<Hero> {
-    const url = `${this.heroesUrl}/${id}`;
+    const url = `${this.getHeroUrl}/${id}`;
     return this.http.get<Hero>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
