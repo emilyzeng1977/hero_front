@@ -3,7 +3,13 @@
   <div><span>id: </span>{{hero.id}}</div>
   <div>
     <label for="hero-name">Student name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name"/>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="ame"/><br>
+    <label for="hero-en">English: </label>
+    <input id="hero-en" [(ngModel)]="hero.en" placeholder="English"/><br>
+    <label for="hero-ts">Think skills: </label>
+    <input id="hero-ts" [(ngModel)]="hero.ts" placeholder="ThinkSkills"/><br>
+    <label for="hero-math">Maths: </label>
+    <input id="hero-math" [(ngModel)]="hero.math" placeholder="Maths"/>
   </div>
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
