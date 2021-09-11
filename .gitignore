@@ -1,6 +1,6 @@
 # idea
-.idea/
+.idea/*
 # static web
-dist/
+dist/*
 # node modules
-node_modules/
+node_modules/*
