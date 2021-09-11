@@ -15,6 +15,7 @@ export class HeroService {
   private heroesUrl = 'http://localhost:5000/list'
   private getHeroUrl = 'http://localhost:5000/student'
   private addHeroUrl = 'http://localhost:5000/add'
+  private updateHeroUrl = 'http://localhost:5000/update'
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -92,7 +93,7 @@ export class HeroService {
 
   /** PUT: update the hero on the server */
   updateHero(hero: Hero): Observable<any> {
-    return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+    return this.http.put(this.updateHeroUrl, hero, this.httpOptions).pipe(
       tap(_ => this.log(`updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
     );
