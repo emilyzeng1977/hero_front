@@ -33,4 +33,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - build
-      - package 1
+      - package
