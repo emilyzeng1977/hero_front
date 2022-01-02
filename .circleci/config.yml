@@ -27,6 +27,16 @@ jobs:
           name: "hello package"
           command: "echo Hello, package!"
 
+  generateAppVersion:
+    docker:
+      - image: cimg/node:14.17.0
+    steps:
+      - checkout
+      - run:
+          name: "semantic versioning"
+          command: |
+            npx semantic-release --debug --no-ci
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -34,3 +44,8 @@ workflows:
     jobs:
       - build
       - package
+      - generateAppVersion:
+          filters:
+            branches:
+              only:
+                - master
