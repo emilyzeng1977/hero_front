@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "hello build"
+          name: "hello build01"
           command: "echo Hello, build!"
 
   package:
